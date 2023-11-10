@@ -5,12 +5,6 @@ import Button from '../Button'
 import { useState } from 'react'
 
 const Form = (props) => {
-  const times = [
-    'Programação',
-    'Front-End',
-    'Data Science',
-  ]
-
   const [name, setName] = useState('')
   const [job, setJob] = useState('')
   const [image, setImage] = useState('')
@@ -25,6 +19,11 @@ const Form = (props) => {
       image,
       team
     })
+
+    setName('')
+    setJob('')
+    setImage('')
+    setTeam('')
   }
 
   return (
@@ -59,7 +58,7 @@ const Form = (props) => {
         <Dropdown 
           required={true} 
           label="Time" 
-          items={times} 
+          items={props.teams} 
           value={team}
           onChange={setTeam}
         />
