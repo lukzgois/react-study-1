@@ -2,8 +2,8 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer class="footer">
-      <div class="footer-social">
+    <footer className="footer">
+      <div className="footer-social">
         <a href="#">
           <img src='/images/fb.png' />
         </a>

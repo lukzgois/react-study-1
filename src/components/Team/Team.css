@@ -1,7 +1,13 @@
 .team {
-  text-align: center;
   padding: 16px;
+  text-align: center;
   padding-bottom: 50px;
+  margin: 0 auto;
+}
+
+.team .container {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .team h3 {
@@ -12,7 +18,8 @@
 }
 
 .team-employees {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  place-items: center;
+  gap: 32px
 }

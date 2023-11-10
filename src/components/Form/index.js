@@ -20,10 +20,10 @@ const Form = (props) => {
       team
     })
 
-    setName('')
-    setJob('')
-    setImage('')
-    setTeam('')
+    // setName('')
+    // setJob('')
+    // setImage('')
+    // setTeam('')
   }
 
   return (

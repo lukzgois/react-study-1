@@ -8,16 +8,24 @@ const Team = (props) => {
         className='team'
         style={{backgroundColor: props.secondaryColor}}
       >
-        <h3
-          style={{borderColor: props.primaryColor}}
-        >{props.name}</h3>
+        <div class="container">
+          <h3
+            style={{borderColor: props.primaryColor}}
+          >{props.name}</h3>
 
-        <div class="team-employees">
-          {props.employees.map(employee => {
-            return (
-              <Employee name={employee.name} job={employee.job} image={employee.image} />
-            )
-          })}
+          <div className="team-employees">
+            {props.employees.map(employee => {
+              return (
+                <Employee 
+                  name={employee.name} 
+                  job={employee.job} 
+                  image={employee.image} 
+                  key={employee.name}
+                  headerColor={props.primaryColor}
+                />
+              )
+            })}
+          </div>
         </div>
       </section>
   )

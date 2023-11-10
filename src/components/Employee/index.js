@@ -1,13 +1,16 @@
 import './Employee.css'
 
-const Employee = ({ name, job, image }) => {
+const Employee = ({ name, job, image, headerColor }) => {
   return (
     <div className='employee'>
-      <div class="employee-header">
+      <div 
+        className="employee-header"
+        style={{ backgroundColor: headerColor }}
+      >
         <img src={image} alt="Foto do coladorador" />
       </div>
 
-      <div class="employee-footer">
+      <div className="employee-footer">
         <h4>{name}</h4>
         <h5>{job}</h5>
       </div>
