@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Banner from './components/Banner/Banner'
+import Footer from './components/Footer';
 import Form from './components/Form'
 import Team from './components/Team'
 
@@ -40,6 +41,8 @@ function App() {
           />
         )
       })}
+
+      <Footer />
     </div>
   );
 }
