@@ -1,0 +1,17 @@
+.teams h2 {
+  font-family: Prata;
+  font-weight: 400;
+  font-size: 40px;
+  color: #6278F7;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.teams h2::after {
+  content: '';
+  width: 64px;
+  height: 4px;
+  background-color: #6278F7;
+  display: block;
+  margin: 16px auto;
+}

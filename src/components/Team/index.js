@@ -1,27 +1,28 @@
 import Employee from '../Employee'
 import './Team.css'
 
-const Team = (props) => {
+const Team = ({employees, name, primaryColor, secondaryColor}) => {
   return (
-    props.employees.length > 0 &&
+    employees.length > 0 &&
       <section
         className='team'
-        style={{backgroundColor: props.secondaryColor}}
+        style={{backgroundColor: secondaryColor}}
       >
         <div class="container">
-          <h3
-            style={{borderColor: props.primaryColor}}
-          >{props.name}</h3>
+          <h3>
+            {name}
+            <p style={{ backgroundColor: primaryColor }}></p>
+          </h3>
 
           <div className="team-employees">
-            {props.employees.map(employee => {
+            {employees.map(employee => {
               return (
                 <Employee 
                   name={employee.name} 
                   job={employee.job} 
                   image={employee.image} 
                   key={employee.name}
-                  headerColor={props.primaryColor}
+                  headerColor={primaryColor}
                 />
               )
             })}

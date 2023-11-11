@@ -12,9 +12,18 @@
 
 .team h3 {
   font-size: 32px;
-  border-bottom: 4px solid #57C278;
   display: inline-block;
   padding-bottom: 8px;
+  font-family: Prata;
+  font-weight: 400;
+}
+
+.team h3 p {
+  width: 32px;
+  height: 4px;
+  background-color: #6278F7;
+  display: block;
+  margin: 6px auto;
 }
 
 .team-employees {

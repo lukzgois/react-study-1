@@ -20,16 +20,16 @@ const Form = (props) => {
       team
     })
 
-    // setName('')
-    // setJob('')
-    // setImage('')
-    // setTeam('')
+    setName('')
+    setJob('')
+    setImage('')
+    setTeam('')
   }
 
   return (
     <section className="form">
       <form onSubmit={handleSubmit}>
-        <h2>Preencha os dados para criar o card do colaborador</h2>
+        <h2>Preencha os dados para criar o card do colaborador.</h2>
 
         <TextField 
           required={true}

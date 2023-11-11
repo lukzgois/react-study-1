@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Banner from './components/Banner/Banner'
 import Footer from './components/Footer';
 import Form from './components/Form'
-import Team from './components/Team'
+import Teams from './components/Teams';
 
 function App() {
   const teams = [
@@ -30,17 +30,7 @@ function App() {
         teams={teams.map(team => team.name)}
       />
 
-      {teams.map(team => {
-        return (
-          <Team 
-            name={team.name}
-            key={team.name} 
-            primaryColor={team.primaryColor}
-            secondaryColor={team.secondaryColor}
-            employees={employees.filter(employee => employee.team == team.name)}
-          />
-        )
-      })}
+      <Teams teams={teams} employees={employees} />
 
       <Footer />
     </div>
