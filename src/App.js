@@ -5,17 +5,21 @@ import Form from './components/Form'
 import Teams from './components/Teams';
 
 function App() {
-  const teams = [
-    { name: 'Programação', primaryColor: '#57C278', secondaryColor: '#D9F7E9' },
-    { name: 'Front-End', primaryColor: '#82CFFA', secondaryColor: '#E8F8FF' },
-    { name: 'Data Science', primaryColor: '#A6D157', secondaryColor: '#F0F8E2' },
-    { name: 'DevOps', primaryColor: '#E06B69', secondaryColor: '#FDE7E8' },
-    { name: 'UX e Design', primaryColor: '#DB6EBF', secondaryColor: '#FAE9F5' },
-    { name: 'Mobile', primaryColor: '#FFBA05', secondaryColor: '#FFF5D9' },
-    { name: 'Inovação e Gestão', primaryColor: '#FF8A29', secondaryColor: '#FFEEDF' },
+  const [teams, setTeams] = useState([
+    { name: 'Programação', color: '#57C278' },
+    { name: 'Front-End', color: '#82CFFA' },
+    { name: 'Data Science', color: '#A6D157' },
+    { name: 'DevOps', color: '#E06B69' },
+    { name: 'UX e Design', color: '#DB6EBF' },
+    { name: 'Mobile', color: '#FFBA05' },
+    { name: 'Inovação e Gestão', color: '#FF8A29' },
+  ])
+  
+  const initialEmployees = [
+    { name: 'Lucas Gois', job: 'Programador', image: 'https://github.com/lukzgois.png', team: 'Programação' }
   ]
 
-  const [employees, setEmployees] = useState([])
+  const [employees, setEmployees] = useState(initialEmployees)
 
   const addEmployee = (employee) => {
     setEmployees([...employees, employee])
@@ -24,6 +28,18 @@ function App() {
   const deleteEmployee = (employeeToDelete) => {
     const newArray = employees.filter((employee) => employee.name != employeeToDelete)
     setEmployees(newArray)
+  }
+
+  const changeTeamColor = (name, color) => {
+    const updatedArray = teams.map((team) => {
+      if (team.name === name) {
+        team.color = color
+      }
+
+      return team
+    })
+
+    setTeams(updatedArray)
   }
 
   return (
@@ -39,6 +55,7 @@ function App() {
         teams={teams} 
         employees={employees} 
         onDeleteEmployee={deleteEmployee}
+        onChangeTeamColor={changeTeamColor}
       />
 
       <Footer />

@@ -8,6 +8,7 @@
 .team .container {
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
 }
 
 .team h3 {
@@ -31,4 +32,9 @@
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   place-items: center;
   gap: 32px
+}
+
+.color-input {
+  position: absolute;
+  right: 0;
 }
