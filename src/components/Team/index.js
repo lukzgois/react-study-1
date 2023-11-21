@@ -1,7 +1,7 @@
 import Employee from '../Employee'
 import './Team.css'
 
-const Team = ({employees, name, primaryColor, secondaryColor}) => {
+const Team = ({employees, name, primaryColor, secondaryColor, onDeleteEmployee}) => {
   return (
     employees.length > 0 &&
       <section
@@ -23,6 +23,7 @@ const Team = ({employees, name, primaryColor, secondaryColor}) => {
                   image={employee.image} 
                   key={employee.name}
                   headerColor={primaryColor}
+                  onDelete={onDeleteEmployee}
                 />
               )
             })}

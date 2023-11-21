@@ -1,6 +1,7 @@
 .employee {
   width: 260px;
   text-align: center;
+  position: relative;
 }
 
 .employee-header {
@@ -36,4 +37,10 @@
   font-size: 16px;
   font-weight: 400;
   margin: 0;
+}
+
+.employee .delete {
+  position: absolute;
+  top: -16px;
+  right: -16px;
 }
