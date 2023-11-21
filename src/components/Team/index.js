@@ -1,18 +1,26 @@
 import Employee from '../Employee'
+import hexToRgba from 'hex-to-rgba'
 import './Team.css'
 
-const Team = ({employees, name, primaryColor, secondaryColor, onDeleteEmployee}) => {
+const Team = ({employees, name, color, onChangeTeamColor, onDeleteEmployee}) => {
   return (
     employees.length > 0 &&
       <section
         className='team'
-        style={{backgroundColor: secondaryColor}}
+        style={{backgroundColor: hexToRgba(color, '0.6')}}
       >
-        <div class="container">
+        <div className="container">
           <h3>
             {name}
-            <p style={{ backgroundColor: primaryColor }}></p>
+            <p style={{ backgroundColor: color }}></p>
           </h3>
+
+          <input 
+            type="color" 
+            className='color-input' 
+            value={color}
+            onChange={(event) => onChangeTeamColor(name, event.target.value)}
+          />
 
           <div className="team-employees">
             {employees.map(employee => {
@@ -22,7 +30,7 @@ const Team = ({employees, name, primaryColor, secondaryColor, onDeleteEmployee})
                   job={employee.job} 
                   image={employee.image} 
                   key={employee.name}
-                  headerColor={primaryColor}
+                  headerColor={color}
                   onDelete={onDeleteEmployee}
                 />
               )
