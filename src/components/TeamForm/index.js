@@ -1,10 +1,11 @@
 import TextField from '../TextField'
+import ColorField from '../ColorField'
 import Button from '../Button'
 import { useState } from 'react'
 
 const Form = ({ onCreate }) => {
   const [name, setName] = useState('')
-  const [color, setColor] = useState('')
+  const [color, setColor] = useState('#000000')
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -15,7 +16,7 @@ const Form = ({ onCreate }) => {
     })
 
     setName('')
-    setColor('')
+    setColor('#000000')
   }
 
   return (
@@ -30,7 +31,7 @@ const Form = ({ onCreate }) => {
         onChange={setName}
       />
 
-      <TextField
+      <ColorField
         required 
         label="Cor"
         placeholder="Digite a cor do time" 

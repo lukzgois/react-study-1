@@ -1,0 +1,28 @@
+.color-field {
+  display: block;
+  margin: 24px 0;
+}
+
+.color-field span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #212121;
+}
+
+.color-field input {
+  background-color: #FFF;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  height: 66px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.color-field input::placeholder {
+  color: #A4A4A4;
+}
