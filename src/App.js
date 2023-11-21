@@ -20,6 +20,7 @@ function App() {
   const initialEmployees = [
     { 
       id: uuidv4(),
+      bookmark: false,
       name: 'Lucas Gois',
       job: 'Programador',
       image: 'https://github.com/lukzgois.png',
@@ -36,6 +37,18 @@ function App() {
   const deleteEmployee = (id) => {
     const newArray = employees.filter((employee) => employee.id != id)
     setEmployees(newArray)
+  }
+
+  const bookmarkEmployee = (id) => {
+    const updatedArray = employees.map((employee) => {
+      if(employee.id === id) {
+        employee.bookmark = !employee.bookmark
+      }
+
+      return employee
+    })
+
+    setEmployees(updatedArray)
   }
 
   const addTeam = (team) => {
@@ -75,6 +88,7 @@ function App() {
         employees={employees} 
         onDeleteEmployee={deleteEmployee}
         onChangeTeamColor={changeTeamColor}
+        onBookmarkEmployee={bookmarkEmployee}
       />
 
       <Footer />
