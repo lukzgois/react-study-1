@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Banner from './components/Banner/Banner'
 import Footer from './components/Footer';
-import Form from './components/Form'
+import EmployeeForm from './components/EmployeeForm'
+import TeamForm from './components/TeamForm'
 import Teams from './components/Teams';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -37,6 +38,11 @@ function App() {
     setEmployees(newArray)
   }
 
+  const addTeam = (team) => {
+    const newTeam = {id: uuidv4(), ...team}
+    setTeams([...teams, newTeam])
+  }
+
   const changeTeamColor = (id, color) => {
     const updatedArray = teams.map((team) => {
       if (team.id === id) {
@@ -53,10 +59,16 @@ function App() {
     <div className="app">
       <Banner />
 
-      <Form 
-        onCreate={employee => addEmployee(employee)}
-        teams={teams.map(team => team.name)}
-      />
+      <section className="forms-container">
+        <EmployeeForm 
+          onCreate={employee => addEmployee(employee)}
+          teams={teams.map(team => team.name)}
+        />
+
+        <TeamForm 
+          onCreate={addTeam}
+        />
+      </section>
 
       <Teams 
         teams={teams} 

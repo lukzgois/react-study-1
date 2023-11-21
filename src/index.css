@@ -13,3 +13,46 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.forms-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 64px 12px;
+}
+
+.form {
+  background-color: #F2F2F2;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form h2 {
+  font-family: Prata;
+  font-weight: 400
+}
+
+@media screen and (min-width: 850px) {
+  .forms-container {
+    flex-direction: row;
+  }
+
+  .form {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .forms-container {
+    max-width: 80%;
+    margin: 64px auto;
+  }
+
+  .form {
+    padding: 32px 64px;
+  }
+
+}
