@@ -3,6 +3,7 @@ import TextField from '../TextField'
 import Dropdown from '../Dropdown'
 import Button from '../Button'
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = (props) => {
   const [name, setName] = useState('')
@@ -14,6 +15,7 @@ const Form = (props) => {
     event.preventDefault()
 
     props.onCreate({
+      id: uuidv4(),
       name,
       job,
       image,

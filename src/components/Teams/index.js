@@ -10,9 +10,8 @@ const Teams = ({teams, employees, onDeleteEmployee, onChangeTeamColor}) => {
       {teams.map(team => {
         return (
           <Team 
-            name={team.name}
-            key={team.name} 
-            color={team.color}
+            team={team}
+            key={team.id}
             employees={employees.filter(employee => employee.team == team.name)}
             onDeleteEmployee={onDeleteEmployee}
             onChangeTeamColor={onChangeTeamColor}
