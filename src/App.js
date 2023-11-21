@@ -21,6 +21,11 @@ function App() {
     setEmployees([...employees, employee])
   }
 
+  const deleteEmployee = (employeeToDelete) => {
+    const newArray = employees.filter((employee) => employee.name != employeeToDelete)
+    setEmployees(newArray)
+  }
+
   return (
     <div className="app">
       <Banner />
@@ -30,7 +35,11 @@ function App() {
         teams={teams.map(team => team.name)}
       />
 
-      <Teams teams={teams} employees={employees} />
+      <Teams 
+        teams={teams} 
+        employees={employees} 
+        onDeleteEmployee={deleteEmployee}
+      />
 
       <Footer />
     </div>

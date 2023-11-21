@@ -2,7 +2,7 @@ import './Teams.css'
 
 import Team from '../Team'
 
-const Teams = ({teams, employees}) => {
+const Teams = ({teams, employees, onDeleteEmployee}) => {
   return (
     <div className="teams">
       <h2>Minha Orgarnização</h2>
@@ -15,6 +15,7 @@ const Teams = ({teams, employees}) => {
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
             employees={employees.filter(employee => employee.team == team.name)}
+            onDeleteEmployee={onDeleteEmployee}
           />
         )
       })}
