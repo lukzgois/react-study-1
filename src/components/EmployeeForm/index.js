@@ -15,6 +15,7 @@ const Form = (props) => {
 
     props.onCreate({
       id: uuidv4(),
+      bookmark: false,
       name,
       job,
       image,

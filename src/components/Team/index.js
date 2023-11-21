@@ -2,7 +2,7 @@ import Employee from '../Employee'
 import hexToRgba from 'hex-to-rgba'
 import './Team.css'
 
-const Team = ({employees, team, onChangeTeamColor, onDeleteEmployee}) => {
+const Team = ({employees, team, onChangeTeamColor, onDeleteEmployee, onBookmarkEmployee}) => {
   return (
     employees.length > 0 &&
       <section
@@ -30,6 +30,7 @@ const Team = ({employees, team, onChangeTeamColor, onDeleteEmployee}) => {
                   key={employee.id}
                   headerColor={team.color}
                   onDelete={onDeleteEmployee}
+                  onBookmark={onBookmarkEmployee}
                 />
               )
             })}
